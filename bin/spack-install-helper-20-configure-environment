@@ -10,7 +10,7 @@ packages:
   all:
     require: target=$TARGET
   mpi:
-    require: 'openmpi@4.1.6'
+    require: 'openmpi@4.1.6 +pmi'
 EOF
 
 env DEFAULT_VARIANTS="$DEFAULT_VARIANTS" \
