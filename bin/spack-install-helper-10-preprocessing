@@ -126,7 +126,7 @@ do
 done
 
 # Always add openmpi
-SPECS+=('openmpi@5.0.5 fabrics=ofi')
+SPECS+=('openmpi@5.0.5 fabrics=ofi libfabric@1.15')
 
 case $TARGET_MACHINE in
     daint-gpu)
