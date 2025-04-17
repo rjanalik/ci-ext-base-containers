@@ -126,7 +126,7 @@ do
 done
 
 # Always add openmpi
-SPECS+=('openmpi@4.1.6 +pmi')
+SPECS+=('openmpi@5.0.5 +pmi')
 
 case $TARGET_MACHINE in
     daint-gpu)
