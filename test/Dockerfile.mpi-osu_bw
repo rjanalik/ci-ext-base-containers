@@ -23,7 +23,7 @@ RUN ldconfig /usr/local/cuda/lib64/stubs \
  && ldconfig -p \
  && spack-install-helper \
     "$TARGET" \
-    osu-micro-benchmarks \
+    osu-micro-benchmarks@7.0 \
     bc \
  && ldconfig \
  && ldconfig -p
