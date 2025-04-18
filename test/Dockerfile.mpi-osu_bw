@@ -7,12 +7,12 @@ RUN apt-get update \
   && env DEBIAN_FRONTEND=noninteractive TZ=Europe/Zurich apt-get -yqq install --no-install-recommends build-essential
 
 # Fix error in ./configure: cannot link with -lcuda
-#RUN TARGET=/usr/local/cuda/lib64/stubs/libcuda.so; \
-#    LINK_NAME=/usr/local/cuda/lib64/libcuda.so; \
-#    if test -f $TARGET && test ! -f $LINK_NAME; \
-#    then \
-#      ln -s $TARGET $LINK_NAME; \
-#    fi
+RUN TARGET=/usr/local/cuda/lib64/stubs/libcuda.so; \
+    LINK_NAME=/usr/local/cuda/lib64/libcuda.so; \
+    if test -f $TARGET && test ! -f $LINK_NAME; \
+    then \
+      ln -s $TARGET $LINK_NAME; \
+    fi
 
 ARG TARGET
 #RUN spack-install-helper \
@@ -23,7 +23,7 @@ RUN ldconfig /usr/local/cuda/lib64/stubs \
  && ldconfig -p \
  && spack-install-helper \
     "$TARGET" \
-    osu-micro-benchmarks@7.0 \
+    osu-micro-benchmarks \
     bc \
  && ldconfig \
  && ldconfig -p
