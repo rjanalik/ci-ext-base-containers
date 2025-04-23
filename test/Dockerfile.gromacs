@@ -6,7 +6,7 @@ FROM $BUILDIMG as builder
 ARG TARGET
 RUN spack-install-helper \
     "$TARGET" \
-    "gromacs +mpi"
+    "gromacs"
 
 # end of builder container, now we are ready to copy necessary files
 
